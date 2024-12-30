@@ -2,9 +2,11 @@
 
 {% block content %}
 <h1>Categories</h1>
-<ul>
+<ul class="list-group">
     {% for category in categories %}
-        <li>{{ category.name }} - {{ category.description }}</li>
+        <li class="list-group-item">
+            <strong>{{ category.name }}</strong>: {{ category.description }}
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}
