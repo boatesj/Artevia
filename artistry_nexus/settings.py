@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-boatesj-artistrynexus-e5xx7m85o74.ws.codeinstitute-ide.net']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-boatesj-artistrynexus-e5xx7m85o74.ws.codeinstitute-ide.net'
+]
+
+
 
 # Application definition
 
