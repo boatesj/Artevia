@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ artwork.title }}</h1>
+<p><strong>Category:</strong> {{ artwork.category.name }}</p>
+<p><strong>Description:</strong> {{ artwork.description }}</p>
+<p><strong>Price:</strong> ${{ artwork.price }}</p>
+{% if artwork.image %}
+    <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
+{% endif %}
+{% endblock %}
