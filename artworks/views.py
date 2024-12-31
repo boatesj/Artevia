@@ -2,6 +2,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Artwork
 from .forms import ArtworkForm, CategoryForm
 
+def index(request):
+    """Home page of the Artevia project"""
+    return render(request, 'artworks/index.html')
+
+
 # List views
 def category_list(request):
     """Display a list of all categories"""

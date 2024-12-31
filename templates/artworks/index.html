@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1>Welcome to Artevia</h1>
+    <p>Your hub for exploring artworks and categories.</p>
+    <a href="{% url 'category_list' %}" class="btn btn-primary mx-2">View Categories</a>
+    <a href="{% url 'artwork_list' %}" class="btn btn-secondary mx-2">View Artworks</a>
+</div>
+{% endblock %}
