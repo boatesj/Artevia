@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container text-center my-5">
-    <h1>Welcome to Artevia</h1>
-    <p>Your hub for exploring artworks and categories.</p>
-    <a href="{% url 'category_list' %}" class="btn btn-primary mx-2">View Categories</a>
-    <a href="{% url 'artwork_list' %}" class="btn btn-secondary mx-2">View Artworks</a>
+    <h1 class="display-4 font-weight-bold">Welcome to Artevia</h1>
+    <p class="lead text-muted">Discover stunning artworks and connect with artists from around the world.</p>
+    <div class="my-4">
+        <img src="{% static 'images/art_gallery.jpg' %}" class="img-fluid rounded shadow" alt="Art Gallery">
+    </div>
+    <p class="mt-3">Explore our extensive collection or browse categories tailored to your preferences.</p>
+    <div class="mt-4">
+        <a href="{% url 'category_list' %}" class="btn btn-lg btn-primary mx-2">Browse Categories</a>
+        <a href="{% url 'artwork_list' %}" class="btn btn-lg btn-secondary mx-2">View Artworks</a>
+    </div>
 </div>
 {% endblock %}

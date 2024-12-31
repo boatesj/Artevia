@@ -1,0 +1,178 @@
+/* Base Styles */
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #28666e;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #28666e;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #8d99ae;
+    color: #fff;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #8d99ae;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #6d7687;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #ef233c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #d90429;
+}
+
+/* Cards */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h5 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card .btn {
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+    background-color: #28666e;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Styles */
+form {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    display: inline-block;
+    background-color: #8d99ae;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #6d7687;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .card {
+        display: inline-block;
+        width: calc(33.333% - 1rem);
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        display: block;
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
