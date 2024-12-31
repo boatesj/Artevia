@@ -2,20 +2,46 @@
 
 {% block content %}
 <h1>Artworks</h1>
+
+<!-- Search Bar -->
+<form method="get" action="{% url 'artwork_list' %}" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search artworks..." value="{{ query|default_if_none:'' }}">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
+<!-- Feedback Messages -->
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Artwork List -->
 <div class="row">
-    {% for artwork in artworks %}
-        <div class="col-md-4">
-            <div class="card mb-4">
-                {% if artwork.image %}
-                    <img src="{{ artwork.image.url }}" class="card-img-top" alt="{{ artwork.title }}">
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ artwork.title }}</h5>
-                    <p class="card-text">${{ artwork.price }}</p>
-                    <a href="{% url 'artwork_detail' artwork.pk %}" class="btn btn-primary">View Details</a>
+    {% if artworks %}
+        {% for artwork in artworks %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    {% if artwork.image %}
+                        <img src="{{ artwork.image.url }}" class="card-img-top" alt="{{ artwork.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artwork.title }}</h5>
+                        <p class="card-text">${{ artwork.price }}</p>
+                        <a href="{% url 'artwork_detail' artwork.pk %}" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    {% else %}
+        <p>No artworks found.</p>
+    {% endif %}
 </div>
 {% endblock %}
