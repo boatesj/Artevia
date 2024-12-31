@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Commission
 from .forms import CommissionForm
 from django.contrib import messages
+from django.urls import path
+from . import views
 
 # List all commissions
 def commission_list(request):
