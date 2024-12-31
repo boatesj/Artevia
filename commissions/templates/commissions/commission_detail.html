@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Commission Details</h1>
+    <p><strong>Title:</strong> {{ commission.title }}</p>
+    <p><strong>Description:</strong> {{ commission.description }}</p>
+    <p><strong>Status:</strong> {{ commission.status }}</p>
+    <p><strong>Price:</strong> ${{ commission.price }}</p>
+    <p><strong>Due Date:</strong> {{ commission.due_date }}</p>
+
+    <a href="{% url 'edit_commission' commission.pk %}" class="btn btn-warning">Edit</a>
+    <a href="{% url 'delete_commission' commission.pk %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'commission_list' %}" class="btn btn-secondary">Back to List</a>
+</div>
+{% endblock %}
