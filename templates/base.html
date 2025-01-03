@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/artworks.css' %}">
     {% endblock %}
 
     {% block extra_css %}{% endblock %}
@@ -31,35 +32,54 @@
     <title>Artevia {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3">
             <a class="navbar-brand" href="{% url 'index' %}">
                 <h2 class="logo-font text-black my-0"><strong>Artevia</strong></h2>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#main-nav"
+                aria-controls="main-nav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="main-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'category_list' %}">Categories</a>
+                        <a class="nav-link text-light" href="{% url 'category_list' %}">
+                            Categories
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'artwork_list' %}">Artworks</a>
+                        <a class="nav-link text-light" href="{% url 'artwork_list' %}">
+                            Artworks
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'commission_list' %}">Commissions</a>
+                        <a class="nav-link text-light" href="{% url 'commission_list' %}">
+                            Commissions
+                        </a>
                     </li>
                     {% if request.user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link text-light" href="{% url 'account_logout' %}">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link text-light" href="{% url 'account_login' %}">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link text-light" href="{% url 'account_signup' %}">
+                                <i class="fas fa-user-plus"></i> Register
+                            </a>
                         </li>
                     {% endif %}
                 </ul>
@@ -73,7 +93,7 @@
         {% endblock %}
     </main>
 
-    <footer class="text-center py-4">
+    <footer class="text-center py-4 bg-dark text-light">
         <p>&copy; 2024 Artevia. All rights reserved.</p>
     </footer>
 

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Category{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h3 class="text-danger">Delete Category</h3>
+        <p>Are you sure you want to delete the category: <strong>{{ category.name }}</strong>?</p>
+        <form method="POST" action="{% url 'delete_category' category.id %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-outline-danger">
+                Delete <i class="fas fa-trash ms-1"></i>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

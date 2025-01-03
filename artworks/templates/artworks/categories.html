@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Manage Categories{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h3 class="text-center lime-text text-darken-4 mb-4">Manage Categories</h3>
+    <p class="text-center text-muted">Add, edit, or organize artwork categories effortlessly</p>
+
+    <div class="row justify-content-center">
+        <!-- Add Category -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">Add New Category</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'category_list' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Category Name</label>
+                            <input type="text" name="name" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea name="description" rows="3" class="form-control" placeholder="Add a description (optional)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark mt-3 w-100">Add Category</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Category -->
+        {% if category_to_edit %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-light">
+                    <h5 class="mb-0">Edit Category</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'category_list' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="category_id" value="{{ category_to_edit.id }}">
+                        <div class="form-group">
+                            <label for="edit_name">Category Name</label>
+                            <input type="text" name="name" id="edit_name" class="form-control"
+                                   value="{{ category_to_edit.name }}" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea name="description" rows="3" class="form-control">{{ category_to_edit.description }}</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary mt-3 w-100">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Categories List -->
+<h4 class="text-center lime-text text-darken-4 mt-5 mb-3">Existing Categories</h4>
+<ul class="list-group">
+    {% for category in categories %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+            <h5 class="mb-1">{{ category.name }}</h5>
+            <p class="text-muted mb-0">{{ category.description|default:"No description provided." }}</p>
+        </div>
+        <div>
+            <!-- Edit Button -->
+            <a href="{% url 'category_detail' category.id %}" class="btn btn-sm btn-outline-dark me-2">
+                Edit <i class="fas fa-edit ms-1"></i>
+            </a>
+            <!-- Delete Button -->
+            <form method="POST" action="{% url 'delete_category' category.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-outline-danger">
+                    Delete <i class="fas fa-trash ms-1"></i>
+                </button>
+            </form>
+        </div>
+    </li>
+    {% empty %}
+    <li class="list-group-item text-center">
+        <p class="text-muted">No categories available. Add one above!</p>
+    </li>
+    {% endfor %}
+</ul>
+
+    </ul>
+</div>
+{% endblock %}

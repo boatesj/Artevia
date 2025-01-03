@@ -1,0 +1,82 @@
+[
+    {
+        "model": "artworks.category",
+        "pk": 1,
+        "fields": {
+            "name": "Reproductions",
+            "description": "Artworks that are replicas of famous pieces."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 2,
+        "fields": {
+            "name": "Modern Art",
+            "description": "Contemporary and modern abstract artworks."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 3,
+        "fields": {
+            "name": "Landscapes",
+            "description": "Scenic landscapes captured in art."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 4,
+        "fields": {
+            "name": "Portraits",
+            "description": "Classic and modern portraits."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 5,
+        "fields": {
+            "name": "Nature",
+            "description": "Artworks depicting the beauty of nature."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 6,
+        "fields": {
+            "name": "Abstract",
+            "description": "Geometric and abstract art pieces."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 7,
+        "fields": {
+            "name": "Winter Scenes",
+            "description": "Winter-themed landscapes and art."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 8,
+        "fields": {
+            "name": "Mountains",
+            "description": "Mountain landscapes and views."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 9,
+        "fields": {
+            "name": "Sunsets",
+            "description": "Beautiful sunsets captured in art."
+        }
+    },
+    {
+        "model": "artworks.category",
+        "pk": 10,
+        "fields": {
+            "name": "Urban",
+            "description": "Cityscapes and urban art."
+        }
+    }
+]

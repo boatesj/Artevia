@@ -1,9 +1,37 @@
+# Core Dumps
 core.Microsoft*
 core.mongo*
 core.python*
-env.py
+
+# Python Bytecode
 __pycache__/
 *.py[cod]
+
+# Virtual Environment
+env.py  # For any environment configuration Python script
+venv/  # Ignore virtual environment folder
+
+# Node Modules (if applicable)
 node_modules/
+
+# GitHub Directory
 .github/
+
+# Other
 cloudinary_python.txt
+
+# Environment Variables
+.env  # Ensures the .env file is ignored
+
+# Logs and Temporary Files
+*.log
+*.tmp
+
+# Django Static and Media Files
+/static/
+/media/
+
+# IDE and Editor Files
+.idea/  # PyCharm
+.vscode/  # Visual Studio Code
+*.swp  # Swap files

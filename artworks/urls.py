@@ -8,7 +8,9 @@ urlpatterns = [
     # Categories
     path('categories/', views.category_list, name='category_list'),
     path('category/add/', views.add_category, name='add_category'),
-    path('category/edit/<int:pk>/', views.edit_category, name='edit_category'),
+    path('category/edit/<int:category_id>/', views.edit_category, name='edit_category'),
+    path('category/delete/<int:category_id>/', views.delete_category, name='delete_category'),
+    path('category/<int:category_id>/', views.category_detail, name='category_detail'),
     
     # Artworks
     path('artworks/', views.artwork_list, name='artwork_list'),

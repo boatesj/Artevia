@@ -2,10 +2,31 @@
 {% load static %}
 
 {% block content %}
-<h1>Categories</h1>
+<h1 class="mb-4">Categories</h1>
 <ul class="list-group">
     {% for category in categories %}
-        <li class="list-group-item">
+        <li class="list-group-item d-flex align-items-center">
+            {% if category.name == 'Reproductions' %}
+                <i class="fas fa-clone mr-2"></i>
+            {% elif category.name == 'Modern Art' %}
+                <i class="fas fa-shapes mr-2"></i>
+            {% elif category.name == 'Landscapes' %}
+                <i class="fas fa-tree mr-2"></i>
+            {% elif category.name == 'Portraits' %}
+                <i class="fas fa-user mr-2"></i>
+            {% elif category.name == 'Nature' %}
+                <i class="fas fa-leaf mr-2"></i>
+            {% elif category.name == 'Abstract' %}
+                <i class="fas fa-palette mr-2"></i>
+            {% elif category.name == 'Winter Scenes' %}
+                <i class="fas fa-snowflake mr-2"></i>
+            {% elif category.name == 'Mountains' %}
+                <i class="fas fa-mountain mr-2"></i>
+            {% elif category.name == 'Sunsets' %}
+                <i class="fas fa-sun mr-2"></i>
+            {% elif category.name == 'Urban' %}
+                <i class="fas fa-city mr-2"></i>
+            {% endif %}
             <strong>{{ category.name }}</strong>: {{ category.description }}
         </li>
     {% endfor %}
